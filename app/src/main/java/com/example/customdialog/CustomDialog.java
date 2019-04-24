@@ -22,7 +22,7 @@ import com.example.customdialog.databinding.PopupListBinding;
 public class CustomDialog extends DialogFragment {  // 왜 DialogFragment 인가? 구글이 왠만하면 이거쓰라고 추천한다. 왜인지는 모르겟다.
 
     /*
-    다이어로그 생성자 (라사 등 다른 생성자와는 조금 다르다) : 우선 자신을 객체로 선언.
+    다이어로그 생성자 (라사 등 다른 생성자와는 조금 다르다) : 우선 자신을 객체로 선언. : 아니지 리사처럼 해도 되겟네.
     1. 외부에서 사용시 파라미터로 해당 인터페이스를 넣어준다.    인터페이스를 등록해주면,  dialogFragment.OnMenuClick(mClickListener); 로 1,2,3이 차례로 발동된다.
     2. 해당 인터페이스 파라미터를 통해 외부용 메소드(OnMenuClick) 가 실행되고, 최종적으로 인터페이스의 메소드를 불러온다.
     3. UI 초기화는 onCreateView 에 선언한다.
@@ -59,25 +59,20 @@ public class CustomDialog extends DialogFragment {  // 왜 DialogFragment 인가
 
         mBinding.layoutRoot.setOnClickListener(v->getDialog().dismiss()); // 다이얼로그 외부 누르면 끈다.(람다)
 
-
         // 클릭 이벤트만 등록. 세부 동작 내용은 이 다이얼로그를 사용하는 외부클래스에 선언.
-        mBinding.popupTopBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mClickListener!=null){
-                    mClickListener.hungry(getDialog()); // 이 다이얼로그를 받아쓸 곳에 넘기나.
-                }
-            }
-        });
+        mBinding.popupTopBtn.setOnClickListener(v -> {
+            if (mClickListener != null) {
+                mClickListener.hungry(getDialog());// 이 다이얼로그를 받아쓸 곳에 넘기나.
+            }});
 
-        mBinding.popupBottomBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(mClickListener!=null){
-                    mClickListener.sleep(getDialog());
-                }
-            }
-        });
+
+        mBinding.popupBottomBtn.setOnClickListener(v -> {
+            if (mClickListener != null) {
+                mClickListener.sleep(getDialog());
+            }});
+
+
+
 
 
         return mBinding.getRoot();
