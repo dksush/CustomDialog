@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/layout_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_A8000000"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="27dp"
+            android:layout_marginRight="27dp"
+            android:background="@drawable/kt_bg_popup_bg"
+            android:orientation="vertical"
+            android:paddingBottom="12dp"
+            android:paddingLeft="26dp"
+            android:paddingRight="26dp"
+            android:paddingTop="10dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+
+            <RelativeLayout
+                android:id="@+id/btn_use_camera"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/popup_top_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/popup_textview_color_selector01"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:text="졸리다"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/color_c8c8c8"/>
+
+            <RelativeLayout
+                android:id="@+id/btn_library"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/popup_bottom_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:gravity="center"
+                    android:includeFontPadding="false"
+                    android:textColor="@color/popup_textview_color_selector01"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:text="아주졸리다"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
